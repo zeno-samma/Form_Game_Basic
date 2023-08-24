@@ -10,7 +10,7 @@ public class Const
     public const string ENEMY_WEAPON_TAG = "EnemyWeaPon";
 
     //=====================Anim
-    public const string ATTACK_ANIM = "Attacking";
+    public const string ATTACK_ANIM = "Attack";
     public const string DEATH_ANIM = "Death";
 
     //=====================Player
