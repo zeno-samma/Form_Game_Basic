@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace MyGame.DefGameBasic
 {
-    public class Player_Control : MonoBehaviour
+    public class Player_Control : MonoBehaviour, IComponentChecking
     {
         public float atkRate;
         private Animator m_anim;
         private float m_curAtkRate;
         private bool m_isCanAtk;
-
+        public GameObject m_gameObject;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
@@ -24,18 +26,21 @@ namespace MyGame.DefGameBasic
 
         }
 
+        public bool IsComNull()
+        {
+            return m_anim == null;
+        }
+
         // Update is called once per frame
         void Update()
         {
+            if (IsComNull()) return;
+
             //Debug.Log(m_isCanAtk);
             if (Input.GetMouseButtonDown(0) && !m_isCanAtk)
             {
-                if (m_anim)
-                {
                     m_anim.SetBool(Const.ATTACK_ANIM, true);
                     m_isCanAtk = true;
-                }
-
             }
             if (m_isCanAtk)
             {
@@ -49,8 +54,19 @@ namespace MyGame.DefGameBasic
         }
         public void ResetAtkAnim()
         {
-            if (m_anim)
-                m_anim.SetBool(Const.ATTACK_ANIM, false);
+            if (IsComNull()) return;
+            m_anim.SetBool(Const.ATTACK_ANIM, false);
+        }
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            //Debug.Log(col.GameObject().tag);
+            if (IsComNull()) return;
+            if (col.CompareTag(Const.ENEMY_WEAPON_TAG))
+            {
+                m_anim.SetTrigger(Const.DEATH_ANIM);
+                //Debug.Log(m_gameObject);
+                m_gameObject.SetActive(false);
+            }
         }
     }
 }

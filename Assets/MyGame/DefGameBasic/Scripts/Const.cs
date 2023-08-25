@@ -8,7 +8,7 @@ namespace MyGame.DefGameBasic
         //=======================Tag
         public const string PLAYER_TAG = "Player";
         public const string ENEMY_TAG = "Enemy";
-        public const string ENEMY_WEAPON_TAG = "EnemyWeaPon";
+        public const string ENEMY_WEAPON_TAG = "EnemyWeapon";
 
         //=====================Anim
         public const string ATTACK_ANIM = "Attack";

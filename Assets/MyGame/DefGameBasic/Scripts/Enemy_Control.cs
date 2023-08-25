@@ -1,10 +1,10 @@
-using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace MyGame.DefGameBasic
 {
-    public class Enemy_Cotrol : MonoBehaviour
+    public class Enemy_Control : MonoBehaviour, IComponentChecking
     {
         public float speed;
         public float atkDistance;
@@ -25,17 +25,24 @@ namespace MyGame.DefGameBasic
 
         }
 
+        public bool IsComNull()
+        {
+            return m_anim == null;
+        }
+
+
         // Update is called once per frame
         void Update()
         {
-            if (m_player == null || m_rb == null )return;
+            if (IsComNull()) return;
             if (Vector2.Distance(m_player.transform.position, transform.position) <= atkDistance)
-            { 
+            {
                 m_anim.SetBool(Const.ATTACK_ANIM, true);
                 m_rb.velocity = Vector2.zero;
-            }else
+            }
+            else
             {
-               m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);
+                m_rb.velocity = new Vector2(-speed, m_rb.velocity.y);
             }
         }
     }
