@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace MyGame.DefGameBasic
 {
-    public class Player : MonoBehaviour
+    public class Player_Control : MonoBehaviour
     {
         public float atkRate;
         private Animator m_anim;

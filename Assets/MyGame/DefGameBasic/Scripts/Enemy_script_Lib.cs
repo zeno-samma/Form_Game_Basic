@@ -5,7 +5,7 @@ using UnityEditor.Timeline.Actions;
 using UnityEngine;
 namespace MyGame.DefGameBasic
 {
-    public class Enemy_script : MonoBehaviour
+    public class Enemy_script_Lib : MonoBehaviour
     {
         //public GameObject heroPrefab;//Get ob
         //public SpriteRenderer sp;
