@@ -11,14 +11,12 @@ namespace MyGame.DefGameBasic
         private Animator m_anim;
         private float m_curAtkRate;
         private bool m_isCanAtk;
-        public GameObject m_gameObject;
+        public GameObject pl_gameObject;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
             m_curAtkRate = atkRate;
         }
-
-
 
         // Start is called before the first frame update
         void Start()
@@ -56,17 +54,6 @@ namespace MyGame.DefGameBasic
         {
             if (IsComNull()) return;
             m_anim.SetBool(Const.ATTACK_ANIM, false);
-        }
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            //Debug.Log(col.GameObject().tag);
-            if (IsComNull()) return;
-            if (col.CompareTag(Const.ENEMY_WEAPON_TAG))
-            {
-                m_anim.SetTrigger(Const.DEATH_ANIM);
-                //Debug.Log(m_gameObject);
-                m_gameObject.SetActive(false);
-            }
         }
     }
 }

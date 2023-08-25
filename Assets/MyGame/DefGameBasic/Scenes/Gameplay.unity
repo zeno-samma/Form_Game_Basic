@@ -397,10 +397,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hero_01
       objectReference: {fileID: 0}
-    - target: {fileID: 5761059536209201327, guid: 36087453d4dbf7d43b624c1b9e7f8ed4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

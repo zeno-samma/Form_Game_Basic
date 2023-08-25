@@ -1,5 +1,6 @@
 //using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MyGame.DefGameBasic
@@ -11,7 +12,7 @@ namespace MyGame.DefGameBasic
         Animator m_anim;
         Rigidbody2D m_rb;
         Player_Control m_player;//Script player
-
+        public GameObject en_gameObject;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
@@ -35,7 +36,8 @@ namespace MyGame.DefGameBasic
         void Update()
         {
             if (IsComNull()) return;
-            if (Vector2.Distance(m_player.transform.position, transform.position) <= atkDistance)
+            float disToPlayer = Vector2.Distance(m_player.transform.position, transform.position);
+            if ( disToPlayer <= atkDistance)
             {
                 m_anim.SetBool(Const.ATTACK_ANIM, true);
                 m_rb.velocity = Vector2.zero;
