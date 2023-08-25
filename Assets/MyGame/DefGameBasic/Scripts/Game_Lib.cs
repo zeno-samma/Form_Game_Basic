@@ -1,33 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Game_Lib : MonoBehaviour
+namespace MyGame.DefGameBasic
 {
-    public Transform myTransform;
-    public void Awake()
+    public class Game_Lib : MonoBehaviour
     {
-        Debug.Log("Awake");
-    }
-    private void OnEnable()
-    {
-        Debug.Log("OnEnable");
-    }
+        public Transform myTransform;
+        public void Awake()
+        {
+            Debug.Log("Awake");
+        }
+        private void OnEnable()
+        {
+            Debug.Log("OnEnable");
+        }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Start");
-        myTransform.position = new Vector3(5,0,0);
-        //Debug.Log(gameObject.tag);
-    }
-    private void OnDestroy()
-    {
-        Debug.Log("OnDestroy");
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Start is called before the first frame update
+        void Start()
+        {
+            Debug.Log("Start");
+            myTransform.position = new Vector3(5, 0, 0);
+            //Debug.Log(gameObject.tag);
+        }
+        private void OnDestroy()
+        {
+            Debug.Log("OnDestroy");
+        }
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
