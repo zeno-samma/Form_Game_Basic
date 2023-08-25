@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atkRate: 0
-  pl_gameObject: {fileID: 0}
+  pl_gameObject: {fileID: 5761059536209201327}
 --- !u!114 &4664206926496908404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +276,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3347c985499e84f9d2da700b1a4e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gameObject: {fileID: 5761059536209201327}

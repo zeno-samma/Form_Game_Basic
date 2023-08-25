@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace MyGame.DefGameBasic
 {
-    public interface IComponentChecking
+    public interface  IComponentChecking
     {
         bool IsComNull();
     }
-
 }

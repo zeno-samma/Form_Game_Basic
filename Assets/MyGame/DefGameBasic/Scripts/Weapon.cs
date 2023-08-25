@@ -7,8 +7,9 @@ namespace MyGame.DefGameBasic
 {
     public class Weapon : MonoBehaviour, IComponentChecking
     {
-        //public GameObject m_gameObject;
+        public GameObject m_gameObject;
         Animator m_anim;
+        private bool en_dead;
         private void Awake()
         {
             m_anim = GetComponent<Animator>();
@@ -23,7 +24,8 @@ namespace MyGame.DefGameBasic
             if (col.CompareTag(Const.ENEMY_WEAPON_TAG))
             {
                 m_anim.SetTrigger(Const.DEATH_ANIM);
-                //m_gameObject.SetActive(false);
+                //Destroy(m_gameObject,3f);
+                //en_dead = true;
             }
         }
     }
